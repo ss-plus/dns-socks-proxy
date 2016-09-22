@@ -34,7 +34,7 @@
 #include <time.h>
 #include <errno.h>
 
-int   SOCKS_PORT  = 9050;
+int   SOCKS_PORT  = 1080;
 char *SOCKS_ADDR  = { "127.0.0.1" };
 int   LISTEN_PORT = 53;
 char *LISTEN_ADDR = { "0.0.0.0" };
@@ -283,9 +283,9 @@ int main(int argc, char *argv[]) {
     if (!strcmp(argv[1], "-h")) {
       printf("Usage: %s [options]\n", argv[0]);
       printf(" * With no parameters, the configuration file is read from 'dns_proxy.conf'.\n\n");
-      printf(" -n          -- No configuration file (socks: 127.0.0.1:9999, listener: 0.0.0.0:53).\n");
-      printf(" -h          -- Print this message and exit.\n");
-      printf(" config_file -- Read from specified configuration file.\n\n");
+      printf(" -n            -- No configuration file (socks: 127.0.0.1:1080, listener: 0.0.0.0:53).\n");
+      printf(" -h            -- Print this message and exit.\n");
+      printf(" <config_file> -- Read from specified configuration file.\n\n");
       printf(" * The configuration file should contain any of the following options (and ignores lines that begin with '#'):\n");
       printf("   * socks_addr  -- socks listener address\n");
       printf("   * socks_port  -- socks listener port\n");
@@ -299,7 +299,7 @@ int main(int argc, char *argv[]) {
       printf("   option = value\n\n");
       printf(" * Any non-specified options will be set to their defaults:\n");
       printf("   * socks_addr   = 127.0.0.1\n");
-      printf("   * socks_port   = 9050\n");
+      printf("   * socks_port   = 1080\n");
       printf("   * listen_addr  = 0.0.0.0\n");
       printf("   * listen_port  = 53\n");
       printf("   * set_user     = nobody\n");
